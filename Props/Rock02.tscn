@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b4fy1ccqck5i"]
+
+[ext_resource type="PackedScene" uid="uid://2d1f71rhq58u" path="res://Props/IkoProps/rocks-b.glb" id="1_ikofw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ikofw"]
+size = Vector3(3.9179688, 3.4572983, 3.7789345)
+
+[node name="rocks-b2" unique_id=1517972879 instance=ExtResource("1_ikofw")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="rocks-b" parent_id_path=PackedInt32Array(104947992) index="0" unique_id=724164868]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rocks-b/StaticBody3D" index="0" unique_id=2107681863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.721592, 0.010110855)
+shape = SubResource("BoxShape3D_ikofw")

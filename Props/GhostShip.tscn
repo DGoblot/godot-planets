@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://6gojis44bgkp"]
+
+[ext_resource type="PackedScene" uid="uid://onufjxs42331" path="res://Props/IkoProps/ship-ghost.glb" id="1_jt2g2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jt2g2"]
+size = Vector3(3.9179688, 8.694214, 9.340607)
+
+[node name="ship-ghost2" unique_id=774895672 instance=ExtResource("1_jt2g2")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ship-ghost" parent_id_path=PackedInt32Array(1814257599) index="5" unique_id=546836698]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ship-ghost/StaticBody3D" index="0" unique_id=965242959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.660095, -0.35578918)
+shape = SubResource("BoxShape3D_jt2g2")

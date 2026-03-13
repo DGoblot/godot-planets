@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://st3m6eypxk3c"]
+
+[ext_resource type="Shader" uid="uid://cn1vekiql0d48" path="res://planets/DavidPlanete/Iko.gdshader" id="1_ylnc7"]
+[ext_resource type="Script" uid="uid://bejybvctvv4er" path="res://planets/DavidPlanete/iko_mesh.gd" id="2_xwy4u"]
+[ext_resource type="Material" uid="uid://wamx2i4grmdq" path="res://planets/DavidPlanete/RoystanToonWaterShader.tres" id="3_xwy4u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ylnc7"]
+render_priority = 0
+shader = ExtResource("1_ylnc7")
+shader_parameter/center_pos = Vector3(0, 0, 0)
+shader_parameter/max_height = 0.0
+shader_parameter/min_height = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_abk53"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_abk53"]
+seed = 137
+frequency = 0.08
+
+[sub_resource type="Gradient" id="Gradient_ylnc7"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.5, 0.5354523, 0.5887641, 0.63146067, 0.66748166)
+colors = PackedColorArray(0.83071446, 0.8298734, 7.70092e-07, 1, 0, 0.574684, 1.92523e-07, 1, 0.07752028, 0.3979821, 0.07667681, 1, 0.5132329, 0.5132329, 0.5132329, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xwy4u"]
+gradient = SubResource("Gradient_ylnc7")
+
+[sub_resource type="SphereMesh" id="SphereMesh_2qlfl"]
+material = ExtResource("3_xwy4u")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ylnc7"]
+
+[node name="Iko" type="MeshInstance3D" unique_id=1462622243]
+material_override = SubResource("ShaderMaterial_ylnc7")
+mesh = SubResource("ArrayMesh_abk53")
+script = ExtResource("2_xwy4u")
+fnl = SubResource("FastNoiseLite_abk53")
+planet_color = SubResource("GradientTexture1D_xwy4u")
+
+[node name="Center" type="Node3D" parent="." unique_id=132155215]
+
+[node name="Water" type="MeshInstance3D" parent="." unique_id=279183940]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("SphereMesh_2qlfl")
+
+[node name="Props" type="Node3D" parent="." unique_id=628189962]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="HitBox" type="StaticBody3D" parent="." unique_id=178689785]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox" unique_id=204112731]
+shape = SubResource("ConcavePolygonShape3D_ylnc7")

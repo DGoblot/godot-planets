@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://p4vo8nydo6oc"]
+
+[ext_resource type="PackedScene" uid="uid://ckum8nlweny6e" path="res://Props/IkoProps/tower-complete-large.glb" id="1_ef7am"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ef7am"]
+size = Vector3(2.9997864, 9.989001, 2.9113178)
+
+[node name="tower-complete-large2" unique_id=496630240 instance=ExtResource("1_ef7am")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tower-complete-large" parent_id_path=PackedInt32Array(1796269064) index="0" unique_id=257920631]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tower-complete-large/StaticBody3D" index="0" unique_id=1628612279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02168274, 4.9862456, 0.037854195)
+shape = SubResource("BoxShape3D_ef7am")

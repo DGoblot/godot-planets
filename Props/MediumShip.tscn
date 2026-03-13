@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dmpokig1x8bp"]
+
+[ext_resource type="PackedScene" uid="uid://b01s6bijwaaue" path="res://Props/IkoProps/ship-medium.glb" id="1_iqbb1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iqbb1"]
+size = Vector3(3.9179688, 8.694214, 9.340607)
+
+[node name="ship-medium2" unique_id=1959891809 instance=ExtResource("1_iqbb1")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ship-medium" parent_id_path=PackedInt32Array(1285098152) index="5" unique_id=1142606624]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ship-medium/StaticBody3D" index="0" unique_id=1432026664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.660095, -0.35578918)
+shape = SubResource("BoxShape3D_iqbb1")

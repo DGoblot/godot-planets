@@ -1,15 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://wegm1cvmm8y3"]
+[gd_scene format=3 uid="uid://wegm1cvmm8y3"]
 
-[ext_resource type="PackedScene" uid="uid://chqk0wso67j30" path="res://Props/Assets/Tree02.FBX" id="1_cidjh"]
-[ext_resource type="Texture2D" uid="uid://3wcg6uce5fsg" path="res://Props/Assets/Tree02.png" id="2_xs2wp"]
+[ext_resource type="PackedScene" uid="uid://cdy14i3iembst" path="res://Props/IkoProps/palm-detailed-straight.glb" id="1_1sylp"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2nfy"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("2_xs2wp")
+[sub_resource type="BoxShape3D" id="BoxShape3D_1sylp"]
+size = Vector3(0.9739227, 3.2881584, 0.98320055)
 
-[node name="Tree02" instance=ExtResource("1_cidjh")]
+[node name="palm-detailed-straight2" unique_id=928447856 instance=ExtResource("1_1sylp")]
 
-[node name="Tree02" parent="." index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_o2nfy")
+[node name="StaticBody3D" type="StaticBody3D" parent="palm-detailed-straight" parent_id_path=PackedInt32Array(1057689402) index="0" unique_id=887505381]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="palm-detailed-straight/StaticBody3D" index="0" unique_id=690892507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03275299, 1.6358242, 0.040394545)
+shape = SubResource("BoxShape3D_1sylp")
